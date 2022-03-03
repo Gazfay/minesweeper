@@ -1,15 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
 import App from './App';
+import StoreProvider from '../jest/storeProvider';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
+test('renders App component', () => {
+  const { getByTestId } = render(
+    <StoreProvider>
       <App />
-    </Provider>
+    </StoreProvider>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(getByTestId('App')).toBeInTheDocument();
 });
