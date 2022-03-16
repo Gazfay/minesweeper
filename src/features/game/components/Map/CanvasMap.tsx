@@ -41,12 +41,11 @@ function Map({ gameMap, onOpenCell }: IMap) {
   const changeCanvasSize = useCallback((canvas: HTMLCanvasElement) => {
     //@ts-ignore
     if (!gameMap.length || gameMap.length === prevGameMap?.length) return;
-    console.log(gameMap, prevGameMap, 'Data');
     const height = gameMap.length * cellSize;
     const width = gameMap[0].length * cellSize;
     canvas.width = width;
     canvas.height = height;
-  }, [gameMap]);
+  }, [gameMap, prevGameMap]);
 
   const drawBorder = ({ ctx, x, y }: IDrawProps) => {
     ctx.beginPath();
