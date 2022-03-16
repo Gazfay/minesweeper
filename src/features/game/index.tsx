@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import ActionsBar from './components/ActionsBar';
-import Map from './components/Map';
+import Map from './components/Map/CanvasMap';
 import ResultModal from './components/ResultModal';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { openCell, startGame } from './gameActions';
